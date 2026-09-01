@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Tracker — Spring Boot</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">JAVA + SPRING BOOT</p>
+        <h1>Job Application Tracker</h1>
+        <p>Frontend -> REST API -> Service -> Repository -> H2 database.</p>
+      </div>
+    </header>
+
+    <section class="stats-grid">
+      <article class="stat-card"><span>Total</span><strong id="totalStat">0</strong></article>
+      <article class="stat-card"><span>Interviews</span><strong id="interviewStat">0</strong></article>
+      <article class="stat-card"><span>Offers</span><strong id="offerStat">0</strong></article>
+      <article class="stat-card"><span>Response rate</span><strong id="responseRateStat">0%</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div><p class="eyebrow">NEW APPLICATION</p><h2>Add a job</h2></div>
+        <p id="message" class="message" aria-live="polite"></p>
+      </div>
+
+      <form id="applicationForm" class="form-grid">
+        <label>Company<input id="company" required placeholder="OpenAI"></label>
+        <label>Position<input id="position" required placeholder="Junior Software Engineer"></label>
+        <label>Date<input id="applicationDate" type="date" required></label>
+        <label>Status
+          <select id="status">
+            <option>SAVED</option><option selected>APPLIED</option><option>INTERVIEW</option>
+            <option>TECHNICAL</option><option>OFFER</option><option>REJECTED</option>
+          </select>
+        </label>
+        <label>Salary / year (€)<input id="salary" type="number" min="0" step="500"></label>
+        <label class="full-width">Notes<textarea id="notes" rows="3"></textarea></label>
+        <div class="full-width actions">
+          <button type="submit">Save application</button>
+          <button id="cancelEditButton" class="secondary-button hidden" type="button">Cancel edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="toolbar">
+        <div><p class="eyebrow">DATABASE</p><h2>Applications</h2></div>
+        <div class="filters">
+          <input id="searchInput" type="search" placeholder="Search">
+          <select id="statusFilter">
+            <option value="ALL">All statuses</option><option>SAVED</option><option>APPLIED</option>
+            <option>INTERVIEW</option><option>TECHNICAL</option><option>OFFER</option><option>REJECTED</option>
+          </select>
+        </div>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Company</th><th>Position</th><th>Date</th><th>Status</th><th>Salary</th><th>Actions</th></tr></thead>
+          <tbody id="applicationsBody"></tbody>
+        </table>
+        <p id="emptyState" class="empty-state">No applications yet.</p>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

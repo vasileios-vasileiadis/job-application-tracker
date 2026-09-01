@@ -1,0 +1,28 @@
+:root { font-family: Inter, system-ui, sans-serif; color:#172033; background:#f3f6fb; }
+* { box-sizing:border-box; }
+body { margin:0; }
+button,input,select,textarea { font:inherit; }
+.container { width:min(1180px,calc(100% - 32px)); margin:auto; padding:48px 0 80px; }
+.hero,.panel-heading,.toolbar { display:flex; justify-content:space-between; gap:24px; align-items:center; }
+.hero { margin-bottom:28px; }
+h1,h2,p { margin-top:0; } h1 { margin-bottom:8px; font-size:clamp(2rem,5vw,4rem); } h2 { margin-bottom:0; }
+.eyebrow { margin-bottom:6px; font-size:.75rem; font-weight:800; letter-spacing:.14em; color:#56627a; }
+.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:16px; }
+.stat-card,.panel { background:#fff; border:1px solid #dfe5ef; border-radius:16px; box-shadow:0 12px 40px rgba(36,50,77,.06); }
+.stat-card { padding:20px; } .stat-card span { display:block; color:#667085; margin-bottom:8px; } .stat-card strong { font-size:2rem; }
+.panel { padding:24px; margin-top:16px; }
+.form-grid { margin-top:24px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+label { display:grid; gap:8px; font-weight:700; }
+input,select,textarea { width:100%; padding:12px 14px; border:1px solid #cdd5df; border-radius:10px; background:#fff; }
+.full-width { grid-column:1/-1; } .actions { display:flex; flex-direction:row; gap:10px; }
+button { border:0; border-radius:10px; padding:11px 16px; font-weight:800; cursor:pointer; background:#203b8f; color:#fff; }
+.secondary-button { background:#fff; color:#203b8f; border:1px solid #b8c4e6; } .danger-button { background:#a92d3a; }
+.message { margin:0; min-height:24px; color:#245c32; font-weight:700; }
+.filters { display:flex; gap:10px; min-width:min(100%,520px); }
+.table-wrapper { margin-top:20px; overflow-x:auto; } table { width:100%; border-collapse:collapse; }
+th,td { padding:14px 12px; text-align:left; border-bottom:1px solid #e7ebf1; } th { font-size:.8rem; color:#64748b; }
+.badge { display:inline-flex; padding:5px 9px; border-radius:999px; background:#edf2ff; font-size:.75rem; font-weight:800; }
+.row-actions { display:flex; gap:8px; } .row-actions button { padding:7px 10px; font-size:.8rem; }
+.empty-state { text-align:center; color:#667085; padding:24px; } .hidden { display:none!important; }
+@media(max-width:800px){.stats-grid,.form-grid{grid-template-columns:1fr 1fr}.hero,.toolbar{align-items:stretch;flex-direction:column}.filters{min-width:0;width:100%}}
+@media(max-width:560px){.stats-grid,.form-grid{grid-template-columns:1fr}.filters{flex-direction:column}}

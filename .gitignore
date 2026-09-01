@@ -1,0 +1,19 @@
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+*.iml
+
+# Java
+java-spring/target/
+java-spring/data/
+
+# Python
+python-fastapi/.venv/
+python-fastapi/__pycache__/
+python-fastapi/*.db
+python-fastapi/.pytest_cache/
+
+# Secrets / local config
+.env
+*.env
